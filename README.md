@@ -4,7 +4,7 @@
 
 This repository consists of:
 
-- The manuscript for the hexa-DOPE documentation.
+- The manuscript for the [hexa-DOPE documentation](https://hexa-dope.readthedocs.io/en/latest/).
 
 This is part of the [physiology data organization project](https://physiology-data-organization.readthedocs.io/)
 (project page is [here](https://github.com/gwappa/physiology-data-organization)).
