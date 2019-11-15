@@ -225,7 +225,7 @@ While the data format itself may be portable and complete, it is **not trial-and
 when one wants to perform lots of explorative analysis with the datasets.
 
 Design decisions
------------------
+^^^^^^^^^^^^^^^^^
 
 .. admonition:: TODO
 
