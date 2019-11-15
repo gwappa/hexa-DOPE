@@ -3,6 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. role:: raw-html(raw)
+  :format: html
+
 Welcome to hexa-DOPE!
 ======================
 
@@ -152,8 +155,8 @@ can become too customized for one single type of experiments**, and does not gen
 to (even slightly) different types. We believe that some design decisions must be made
 as to data organization strategy so that the datasets make sense to the other people.
 
-Neurodata Without Borders (NWB)
-................................
+Neurodata Without Borders for Neurophysiology (NWB:N)
+......................................................
 
 `Neurodata Without Borders (NWB) <https://www.nwb.org/>`_ is the most recent,
 collective efforts to specify a generic format in the field of neurophysiology
@@ -235,6 +238,14 @@ Design decisions
     - Compromise on what this value actually means: this may be done by more
       complex, generic *metadata* format.
 
+
+.. figure:: https://i.creativecommons.org/l/by/4.0/88x31.png
+    :alt: License: CC-BY 4.0
+    :align: center
+    :figwidth: 60%
+
+    This document is licensed under a :raw-html:`<br />`
+    `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
 
 ..
     Indices and tables
