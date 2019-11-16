@@ -40,17 +40,21 @@ As a consequence, data files can get scattered over time, with an ad-hoc naming 
 that "works well for a person", using yet-to-be-defined data structures.
 
 Here, we set the aims of defining hexa-DOPE as generation of an open, generic data structure,
-such that:
+such that it:
 
-1. **It makes sense to as many people as possible.**
-2. **It uses open format for its data files.**
-3. **It can be read and written easily by computer softwares.**
-4. **It can be seamlessly integrated with analytical procedures.**
+1. **helps experimenters organize their own datasets.**
+2. **helps analysts perform their analytical procedures.**
+3. **helps researchers understand the others' datasets.**
+4. **can be read and written by as many programs as possible.**
+5. **can be modular, being able to be adopted partially.**
+6. **allows imperfection of everybody involved.**
 
 As such, it may potentially be used as a foundation for open-data physiology.
 
 Related work
 ^^^^^^^^^^^^^
+
+.. _BIDS:
 
 Brain-Imaging Data Structure (BIDS)
 ....................................
@@ -227,16 +231,86 @@ when one wants to perform lots of explorative analysis with the datasets.
 Design decisions
 ^^^^^^^^^^^^^^^^^
 
-.. admonition:: TODO
+There are several important design decisions in specification of hexa-DOPE.
+They stem from our intent of **keeping the format as simple and concise as possible**
+so that it is easy for any researchers (experimenters and analysts, novice and expert)
+to understand the dataset at first glance.
+Despite the potential issues or problems by keeping the format simple, we believe
+that they actually help the culture of open data thrive.
 
-    describe in detail:
+Minimally prescriptive
+.......................
 
-    - Prescriptive, top-down organization: helps make sense
-    - Built on top of a file system: may be able to download only what you want
-    - What is analysis-friendly? being able to read datasets with specified conditions
-      being read from the data organization
-    - Compromise on what this value actually means: this may be done by more
-      complex, generic *metadata* format.
+Without any top-down organization, experimenters can be lost from where to
+start preparing their datasets. Besides, it will hinder future data-analysis
+programs parse the structure of datasets.
+
+On the other hand, organizing datasets too much results in reduced flexibility
+and reduced expressiveness of the data-organization scheme.
+
+Thus, as being adoped by :ref:`BIDS <BIDS>`, we need **a minimal set of
+requirements for the organization, reflecting the common structure across
+physiology experiments** (e.g. chronological organization; see later descriptions).
+We believe that having these requirements help researchers organize their
+own datasets, and thus, their experiments as well.
+Having a common structure will also help people understand the others' datasets easier.
+
+Based on the file system
+.........................
+
+Having all the datasets in one single file hinders one from download a fraction of it
+and try a small off-line analysis. Therefore, we believe that an open-data
+organization scheme must be built on top of the file system, rather than inside a
+single file, so that anyone can start inspecting the others' datasets by downloading
+a small number of files. In addition, it will help experimenters and analysts
+update the dataset easier.
+
+Having data files separately implies the risk for the files to scatter over time.
+We would still argue that advantages of having data separately exceed its disadvantages.
+We would also suggest several possible counter-measures, such as:
+
+- maintaining the whole dataset under a version-control system (e.g. Git).
+- including relevant metadata under each child directory.
+
+Simple contextual description
+..............................
+
+Description of experimental conditions comprises the core of scientific experiments.
+Any dataset will lose its meaning without these descriptions, in the same way
+as any experimenter is careful about the experimental conditions of his/her subjects.
+Normally, such conditions are carefully factorized into conceptually simple elements
+so that the results of experiments lead to clear conclusions.
+
+On the other hand, it is surprisingly difficult to formally define these experimental
+contexts based on well-defined vocabulary (cf. `Zehl et al., 2016 Front Neuroinform`_
+for an example; see the figure below). Even a simple experiment is based on a
+lot of contextual information: what species and/or strains were used for the study,
+what type of procedures were performed in what order, how stimuli were presented
+to the subjects, and what type of responses from the subjects were recorded using
+what configurations and wirings etc. Formal definition of a set of experimental conditions
+means in reality to describe the experiment as a whole. For the time being,
+it is a very difficult (if not impossible) work to achieve.
+
+.. figure:: /_static/images/ref/Zehl2016fninf.jpg
+    :scale:    50%
+    :align:    center
+    :figwidth: 80%
+
+    **Figure 6. An attempt to describe the context of an experiment.**
+    Note how much information is required to describe a (relatively simple)
+    physiology experiment.
+    The figure is translated from `Zehl et al., 2016 Front Neuroinform`_.
+
+Recognizing the difficulty of describing all the connotations behind the experimental context,
+we decided to **refer to experimental conditions by using abstract keywords** that may not be so
+well-defined (albeit professionally adopted). This approach is better for experimenters
+as this is exactly how they think of their experimental conditions.
+Our approach will still lack a proper definition of what these abstract terms mean
+(in a sense a program would "understand"), and we have to wait for another generic solution
+that subsumes the hexa-DOPE format, and efficiently describes the whole experimental context
+at the same time.
+
+.. _Zehl et al., 2016 Front Neuroinform: https://doi.org/10.3389/fninf.2016.00026
 
 
 .. figure:: https://i.creativecommons.org/l/by/4.0/88x31.png
