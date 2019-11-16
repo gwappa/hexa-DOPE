@@ -316,6 +316,9 @@ at the same time.
 hexa-DOPE specification
 ------------------------
 
+.. contents:: In this section:
+    :local:
+
 Concepts
 ^^^^^^^^^
 
@@ -348,6 +351,9 @@ Metadata files
 Helper programs
 ----------------
 
+.. contents:: In this section:
+    :local:
+
 .. admonition:: TODO
 
     is any other program coming? e.g. writer program, library for Matlab / Igor
@@ -359,7 +365,7 @@ Python reader module
 
     module name? what is missing still?
 
-    
+
 .. figure:: https://i.creativecommons.org/l/by/4.0/88x31.png
     :alt: License: CC-BY 4.0
     :align: center
