@@ -313,6 +313,53 @@ at the same time.
 .. _Zehl et al., 2016 Front Neuroinform: https://doi.org/10.3389/fninf.2016.00026
 
 
+hexa-DOPE specification
+------------------------
+
+Concepts
+^^^^^^^^^
+
+.. admonition:: TODO
+
+    - Common structure: subject (animal), session, program (domain),
+      run, channel, part vs. trial
+    - Variables: subject-level, session-level, trial-level
+
+Dataset organization
+^^^^^^^^^^^^^^^^^^^^^
+
+Directory organization
+.......................
+
+.. admonition:: TODO
+
+    - reflect the common structure
+    - naming conventions: based on BIDS
+
+Metadata files
+...............
+
+.. admonition:: TODO
+
+    1. info on repository (datasets) and the project: json is used
+    2. tables reflecting the context of variables: tsv or csv is used
+    3. metadata on experiments and stimulus protocols: use images
+
+Helper programs
+----------------
+
+.. admonition:: TODO
+
+    is any other program coming? e.g. writer program, library for Matlab / Igor
+
+Python reader module
+.....................
+
+.. admonition:: TODO
+
+    module name? what is missing still?
+
+    
 .. figure:: https://i.creativecommons.org/l/by/4.0/88x31.png
     :alt: License: CC-BY 4.0
     :align: center
